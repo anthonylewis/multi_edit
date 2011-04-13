@@ -1,0 +1,26 @@
+<h1>Editing users</h1>
+
+<%= form_for :user, :url => { :action => 'update_all' }, :html => { :method => :put } do %>
+  <table>
+    <tr>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>E-Mail</th>
+    </tr>
+    <% @users.each do |user| %>
+      <%= fields_for "user[]", user do |user_fields| %>
+    <tr>
+      <td><%= user_fields.text_field :first_name %></td>
+      <td><%= user_fields.text_field :last_name %></td>
+      <td><%= user_fields.text_field :email %></td>
+    </tr>
+      <% end %>
+    <% end %>
+  </table>
+
+  <div class="actions">
+    <%= submit_tag %>
+  </div>
+<% end %>
+
+<%= link_to 'Back', users_path %>
