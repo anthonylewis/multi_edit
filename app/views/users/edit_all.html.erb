@@ -1,6 +1,6 @@
 <h1>Editing users</h1>
 
-<%= form_for :user, :url => { :action => 'update_all' }, :html => { :method => :put } do %>
+<%= form_for :user, :url => update_all_path, :html => { :method => :put } do %>
   <table>
     <tr>
       <th>First Name</th>
@@ -12,7 +12,7 @@
     <tr>
       <td><%= user_fields.text_field :first_name %></td>
       <td><%= user_fields.text_field :last_name %></td>
-      <td><%= user_fields.text_field :email %></td>
+      <td><%= user_fields.email_field :email %></td>
     </tr>
       <% end %>
     <% end %>
