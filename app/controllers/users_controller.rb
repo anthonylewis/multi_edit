@@ -83,7 +83,7 @@ class UsersController < ApplicationController
 
   # GET /users/all/edit
   def edit_all
-    @users = User.find(:all)
+    @users = User.all
   end
 
   # PUT /users/all
